@@ -17,14 +17,14 @@ A flexible, reusable data table component for Laravel Blade views. Works with an
 
 ## Features
 
-✅ **Server-Side Processing** - Pagination, sorting, and filtering
-✅ **Flexible Column Rendering** - Custom render functions per column
-✅ **Action Buttons** - Icon-only buttons with custom handlers
-✅ **Optional Checkboxes** - Select-all + individual row selection
-✅ **State Persistence** - Remembers page, sort, search (1-hour TTL)
-✅ **Multi-Table Support** - Use multiple tables on the same page
-✅ **Multiple Response Formats** - Supports simple REST, DataTables, and custom envelopes
-✅ **Responsive Design** - Mobile-friendly with sticky columns
+✅ **Server-Side Processing** - Pagination, sorting, and filtering  
+✅ **Flexible Column Rendering** - Custom render functions per column  
+✅ **Action Buttons** - Icon-only buttons with custom handlers  
+✅ **Optional Checkboxes** - Select-all + individual row selection  
+✅ **State Persistence** - Remembers page, sort, search (1-hour TTL)  
+✅ **Multi-Table Support** - Use multiple tables on the same page  
+✅ **Multiple Response Formats** - Supports simple REST, DataTables, and custom envelopes  
+✅ **Responsive Design** - Mobile-friendly with sticky columns  
 ✅ **Search & Suggestions** - Built-in search with dropdown suggestions
 
 ---
