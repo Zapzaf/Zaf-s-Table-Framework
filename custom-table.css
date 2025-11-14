@@ -1,0 +1,350 @@
+/* Table Wrapper for Horizontal Scroll */
+.table-wrapper {
+    overflow-x: auto;
+    position: relative;
+}
+
+/* Custom Table Styles */
+.customTable {
+    white-space: nowrap;
+    margin-bottom: 0 !important;
+}
+
+.customTable thead th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    padding: 12px 15px;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.customTable thead th:hover {
+    background-color: #e9ecef;
+}
+
+/* Sticky First Column (ID) */
+.customTable .sticky-col {
+    position: sticky;
+    left: 0;
+    background-color: #f8f9fa;
+    z-index: 11;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.customTable tbody .sticky-col {
+    background-color: #fff;
+    font-weight: 600;
+}
+
+.customTable tbody tr:hover .sticky-col {
+    background-color: #f8f9fa;
+}
+
+/* Sort Icons */
+.sort-icon {
+    font-size: 0.8em;
+    color: #6c757d;
+    margin-left: 5px;
+    display: inline-block;
+    transition: color 0.2s;
+}
+
+.customTable thead th:hover .sort-icon {
+    color: #495057;
+}
+
+.customTable thead th.sort-asc .sort-icon::before {
+    content: '▲';
+    color: #0d6efd;
+}
+
+.customTable thead th.sort-desc .sort-icon::before {
+    content: '▼';
+    color: #0d6efd;
+}
+
+.customTable thead th.sort-asc .sort-icon,
+.customTable thead th.sort-desc .sort-icon {
+    display: none;
+}
+
+/* Table Body Styles */
+.customTable tbody td {
+    padding: 10px 15px;
+    vertical-align: middle;
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.customTable tbody tr {
+    transition: background-color 0.15s;
+}
+
+.customTable tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Actions Column */
+.actions-col {
+    width: 120px;
+    text-align: center;
+    position: sticky;
+    right: 0;
+    background-color: #f8f9fa;
+    z-index: 10;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.customTable tbody td.actions-col {
+    background-color: #fff;
+}
+
+.customTable tbody tr:hover td.actions-col {
+    background-color: #f8f9fa;
+}
+
+/* Action Buttons */
+.action-btns {
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.action-btns .btn {
+    padding: 0;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.action-btns .btn svg {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2;
+}
+
+.action-btns .btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+/* Light modern colors for buttons */
+.action-btns .btn-primary {
+    background-color: #e7f1ff;
+    color: #0d6efd;
+}
+
+.action-btns .btn-primary:hover {
+    background-color: #cce5ff;
+}
+
+.action-btns .btn-success {
+    background-color: #e6f9f3;
+    color: #198754;
+}
+
+.action-btns .btn-success:hover {
+    background-color: #d0f3e7;
+}
+
+.action-btns .btn-info {
+    background-color: #e6f7fd;
+    color: #0dcaf0;
+}
+
+.action-btns .btn-info:hover {
+    background-color: #ccf0fa;
+}
+
+.action-btns .btn-danger {
+    background-color: #fee;
+    color: #dc3545;
+}
+
+.action-btns .btn-danger:hover {
+    background-color: #fdd;
+}
+
+.action-btns .btn-primary:hover {
+    background-color: #0b5ed7 !important;
+}
+
+.action-btns .btn-success:hover {
+    background-color: #198754 !important;
+}
+
+.action-btns .btn-info:hover {
+    background-color: #0dcaf0 !important;
+}
+
+.action-btns .btn-danger:hover {
+    background-color: #dc3545 !important;
+}
+
+/* Search Suggestions */
+.search-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #dee2e6;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-suggestions.active {
+    display: block;
+}
+
+.suggestion-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #f1f3f5;
+    transition: background-color 0.15s;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-item:hover {
+    background-color: #f8f9fa;
+}
+
+.suggestion-item .suggestion-label {
+    font-size: 0.75rem;
+    color: #6c757d;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.suggestion-item .suggestion-text {
+    color: #212529;
+    margin-top: 2px;
+}
+
+.suggestion-item .suggestion-match {
+    background-color: #fff3cd;
+    font-weight: 600;
+}
+
+/* Pagination Styles */
+.pagination {
+    margin: 0;
+}
+
+.pagination .page-link {
+    cursor: pointer;
+    user-select: none;
+}
+
+.pagination .page-item.disabled .page-link {
+    cursor: not-allowed;
+}
+
+/* Loading State */
+.table-loading {
+    position: relative;
+}
+
+.table-loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 100;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #6c757d;
+}
+
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .customTable thead th,
+    .customTable tbody td {
+        padding: 8px 10px;
+        font-size: 0.875rem;
+    }
+    
+    /* Keep action buttons horizontal on mobile */
+    .action-btns {
+        flex-direction: row !important;
+        gap: 3px;
+    }
+    .action-btns .btn {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .action-btns .btn svg {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+/* Additional utility classes for different table types */
+.customTable.table-sm thead th,
+.customTable.table-sm tbody td {
+    padding: 8px 10px;
+    font-size: 0.875rem;
+}
+
+.customTable.table-lg thead th,
+.customTable.table-lg tbody td {
+    padding: 15px 20px;
+    font-size: 1rem;
+}
+
+/* Status badge styles for inventory tables */
+.customTable .status-badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-weight: 600;
+}
+
+/* Highlight low stock rows */
+.customTable tbody tr.low-stock {
+    background-color: #fff3cd !important;
+}
+
+.customTable tbody tr.out-of-stock {
+    background-color: #f8d7da !important;
+}
+
+.customTable tbody tr.critical-stock {
+    background-color: #ffe5b4 !important;
+}
